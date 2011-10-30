@@ -1,0 +1,17 @@
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require(File.join(File.dirname(__FILE__), 'config', 'boot'))
+
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+require 'tasks/rails'
+begin
+  require 'thinking_sphinx/tasks'
+  require 'thinking_sphinx/deltas/datetime_delta/tasks'
+rescue LoadError => load_error
+  puts "first install gems"
+  # puts "LoadError thrown => #{load_error.message}\n#{load_error.backtrace.join("\n")}"
+end

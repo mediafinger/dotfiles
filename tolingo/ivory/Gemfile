@@ -1,0 +1,76 @@
+source :gemcutter
+
+platforms :ruby do
+  gem 'rake', '0.8.7'
+  gem "rails", "2.3.14"
+  gem "mysql"
+  gem "haml", "3.0.25"
+  gem "uuid", "2.0.2"
+  gem "aws-s3", "0.6.2", :require => "aws/s3"
+  gem "raspell", "1.1"
+  gem "nokogiri", ">= 1.4.0"
+  gem "will_paginate", "2.3.16"
+  gem "fastercsv", "1.5.0"
+  gem "ya2yaml", "0.26"
+  gem "aasm", "2.1.1"
+  gem "declarative_authorization"
+  gem "newrelic_rpm"
+  gem "thinking-sphinx", :require => "thinking_sphinx"
+  gem "ts-datetime-delta", "~> 1.0.0", :require => "thinking_sphinx/deltas/datetime_delta"
+  gem "iban-tools"
+  gem "crack", "0.1.8"
+  gem "king_dtaus"
+  gem "pdfkit", "0.5.0"
+  gem "awesome_print", "0.2.1"
+  gem "whenever", "0.6.6", :require => false
+
+  gem "mail_magnet", "0.1.1", :group => [:integration, :staging, :development]
+  gem 'tolingo-messaging', '= 0.4.2'
+  gem 'tolingo-xliff', '= 0.1.0'
+  gem 'daemons'
+  gem 'dragonfly', '~>0.8.1'
+  gem 'rack-cache', :require => 'rack/cache'
+  gem 'deadlock_retry', "1.1.1"
+
+  gem "authlogic",   '= 2.1.6.tolingo1'
+  gem "git"
+  gem "airbrake"
+
+  group :development do
+    gem "mongrel"
+    gem "savon"
+    gem "ruby-debug"
+    gem "i18n"
+    gem "rmagick"
+    gem "sprite", "= 0.1.10"
+    gem "wtc"
+    gem 'tolingo-capistrano', "0.2.2"
+    gem 'foreman'
+    gem 'rb-fsevent', :require => false
+    gem "rdoc"
+    gem "ap"
+  end
+
+  group :test do
+    gem "rspec", "1.3.1"
+    gem "rspec-rails", "1.3.3"
+    gem "accept_values_for", "0.3.1"
+    gem "mocha", "0.9.7", :require => false
+    gem "factory_girl", "1.2.2"
+    gem "random_data", "1.5.0"
+    gem "faker", "0.3.1"
+    gem "context", "= 0.5.5"
+    gem "jasmine"
+    gem "timecop"
+    gem "webrat"
+    gem "syntax"
+    gem 'guard-rspec'
+    gem "rdoc"
+  end
+end
+
+platform :jruby do
+  gem "activesupport", "2.3.14"
+  gem "jruby-openssl", "0.7.2"
+end
+

@@ -1,0 +1,37 @@
+[user]
+  name = "Andreas Finger"
+  email = "webmaster@mediafinger.com"
+[alias]
+  st = status
+  co = checkout
+  b = branch
+  com = commit -am
+  d = diff --staged
+  unstage = reset HEAD
+  resetcommit = reset --soft HEAD^
+[color]
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[push]
+  default = current
+[branch]
+  autosetupmerge = true
+[branch "master"]
+  rebase = true
+[merge]
+  summary = true
+  tool = [opendiff]
+[gc]
+  auto = 1    # automatic garbage collection to keep git fast

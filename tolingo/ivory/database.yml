@@ -1,0 +1,79 @@
+# gem install activerecord-jdbcmysql-adapter
+
+# MySQL.  Versions 4.1 and 5.0 are recommended.
+#
+# Install the MySQL driver:
+#   gem install mysql
+# On Mac OS X:
+#   sudo gem install mysql -- --with-mysql-dir=/usr/local/mysql
+# On Mac OS X Leopard:
+#   sudo env ARCHFLAGS="-arch i386" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config
+#       This sets the ARCHFLAGS environment variable to your native architecture
+# On Windows:
+#   gem install mysql
+#       Choose the win32 build.
+#       Install MySQL and put its /bin directory on your path.
+#
+# And be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+
+development: &development
+  encoding: utf8
+  database: tolingo_development
+  username: root
+  password:
+<% if RUBY_PLATFORM == "java" %>
+  adapter: jdbcmysql
+<% else %>
+  adapter: mysql
+<% end %>
+
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test: &test
+  <<: *development
+  database: tolingo_test
+<% if ENV['USER'] == "hudson" %>
+  host: mysql.stage
+  username: tolingo
+  password: production
+<% end %>
+
+development_tolingo_stats:
+  <<: *development
+
+test_tolingo_stats:
+  <<: *test
+
+
+production:
+  <<: *development
+  database: tolingo_prod
+  host: 192.168.10.20
+  username: xxx
+  password: yyy
+<% if RUBY_PLATFORM == "java" %>
+  adapter: jdbcmysql
+<% else %>
+  adapter: mysql
+<% end %>
+
+staging:
+  <<: *development
+  database: tolingo_staging
+  host: 192.168.1.20
+  username: xxx
+  password: yyy
+<% if RUBY_PLATFORM == "java" %>
+  adapter: jdbcmysql
+<% else %>
+  adapter: mysql
+<% end %>
+
+cucumber: &CUCUMBER
+  <<: *test
+culerity:
+  <<: *CUCUMBER
+
