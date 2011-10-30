@@ -5,7 +5,7 @@
   st = status
   co = checkout
   b = branch
-  com = commit -am
+  com = !git add . && git commit -am
   sync = !git pull --rebase && git push
   d = diff --staged
   unstage = reset HEAD
