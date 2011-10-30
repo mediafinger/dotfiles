@@ -6,6 +6,7 @@
   co = checkout
   b = branch
   com = commit -am
+  sync = !git pull --rebase && git push
   d = diff --staged
   unstage = reset HEAD
   resetcommit = reset --soft HEAD^
@@ -35,3 +36,10 @@
   tool = [opendiff]
 [gc]
   auto = 1    # automatic garbage collection to keep git fast
+[giggle]
+  main-window-maximized = false
+  main-window-geometry = 1000x600+150+72
+  history-view-vpane-position = 327
+  file-view-vpane-position = 542
+  main-window-view = HistoryView
+
