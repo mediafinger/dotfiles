@@ -1,6 +1,8 @@
 [user]
   name = "Andreas Finger"
   email = "webmaster@mediafinger.com"
+[github]
+  user = mediafinger
 [alias]
   st = status
   co = checkout

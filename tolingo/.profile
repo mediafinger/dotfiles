@@ -3,9 +3,6 @@
 # Load RVM, if you are using it
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
-# Add rvm gems and nginx to the path
-# export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
-
 # Path to the bash it configuration
 export BASH=$HOME/.bash_it
 # Lock and Load a custom theme file
@@ -23,10 +20,6 @@ export NGINX_PATH='/opt/nginx'
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
-# Change this to the path of your local jekyll root to use the jekyll aliases
-# export JEKYLL_LOCAL_ROOT="~/Sites/mrminimalist"
-# And change this to the remote server and root
-# export JEKYLL_REMOTE_ROOT="user@server:/path/to/jekyll/root"
 # Set this to the command you use for todo.txt-cli
 # export TODO="t"
 
@@ -36,7 +29,6 @@ unset MAILCHECK
 
 # Load Bash It
 source $BASH/bash_it.sh
-
 
 # Standard
 export PATH=/usr/local/bin:$PATH
@@ -59,7 +51,7 @@ shopt -s histappend
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
-source ~/.git_completion.sh
+# source ~/.git_completion.sh
 
 # Fancy git prompt
 function parse_git_dirty {
@@ -81,7 +73,6 @@ LSCOLORS=ExgxfxgfBxegedbeacbhag
 
 test -f .alias && source .alias
 
-
 alias ll='ls -al'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -94,14 +85,13 @@ alias s="be ./script/server"
 alias r="be rake"
 alias testb="r spec"
 alias testv="r tolingo:tests:all"
-alias cdb='cd ~/Sites/bitmapi'
-alias cdc='cd ~/Sites/cms'
-alias cdv='cd ~/Sites/ivory'
+alias cdb='cd ~/Sites/bitmapi && rvm use 1.9.3-p0'
+alias cdc='cd ~/Sites/cms && rvm use 1.9.3-p0'
+alias cds='cd ~/Sites/sellery && rvm use 1.9.3-p0'
+alias cdt='cd ~/Sites/trans && rvm use 1.9.3-p0'
+alias cdv='cd ~/Sites/ivory && rvm use system'
 
 alias tarit="tar xvfz"
 alias gitdiff='git log|grep commit|cut -d " " -f2|head -n 2|xargs -n 2 git diff -R|mate'
 
 # alias mate="open -a TextMate.app"
-# alias mi="rake db:migrate"
-# alias reset="rake db:migrate:reset"
-# alias pull="git pull --rebase && rake gems:install && mi"
