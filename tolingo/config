@@ -1,0 +1,43 @@
+Host *
+  ForwardAgent yes
+
+Host ec2
+  HostName 67.202.63.155
+  User root
+  Compression yes
+
+Host prod1
+  HostName 95.130.250.6
+  User tolingo
+  Compression yes
+
+Host prod2
+  HostName 95.130.250.9
+  User tolingo
+  Compression yes
+
+Host dbp1
+  HostName 95.130.250.29
+  User tolingo
+  Compression yes
+
+Host dbp2
+  HostName 95.130.250.38
+  User tolingo
+  Compression yes
+
+Host integration
+  HostName 46.4.91.111
+  User tolingo
+  Compression yes
+
+Host staging
+  HostName 109.75.181.174
+  User tolingo
+  Compression yes
+
+Host dbs1
+  HostName 188.40.100.67
+  User tolingo
+  Compression yes
+  
