@@ -56,7 +56,6 @@ export CC=/usr/bin/gcc-4.2
 
 #export LC_ALL=de_DE.UTF-8
 export LC_ALL=en_US.UTF-8
-export LSCOLORS=gxfxcxdxbxegedabagacad
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
@@ -83,7 +82,7 @@ shopt -s histappend
 # activate color for ls
 export CLICOLOR=true
 export LSCOLORS=true
-LSCOLORS=ExgxfxgfBxegedbeacbhag
+export LSCOLORS=ExgxfxgfBxegedbeacbhag
 
 source $HOME/.ssh/auth_keys
 
