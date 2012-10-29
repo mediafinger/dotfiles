@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load RVM, if you are using it
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+# [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 # Path to the bash it configuration
 export BASH=$HOME/.bash_it
@@ -33,8 +33,13 @@ unset MAILCHECK
 # Load Bash It
 source $BASH/bash_it.sh
 
+# Use rbfu
+eval "$(rbfu --init --auto)"
+
 # Standard
 export PATH=/usr/local/bin:$PATH
+# RabbitMQ
+export PATH=/usr/local/sbin:$PATH
 # MySQL
 export PATH=/usr/local/mysql/bin:$PATH
 # MacPorts
@@ -43,6 +48,11 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$HOME/.gem/ruby/1.8/bin:$PATH
 # Sphinx
 export PATH=/usr/local/Cellar/sphinx/0.9.9/bin:$PATH
+# PostgreSQL
+export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+
+#export CC to NOT use LLVM
+export CC=/usr/bin/gcc-4.2
 
 #export LC_ALL=de_DE.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -100,12 +110,13 @@ alias c1="be rails console"
 alias r="be rake"
 alias testb="r spec"
 alias testv="r tolingo:tests:all"
-alias cdb='cd ~/Sites/bitmapi && rvm use system'
-alias cdc='cd ~/Sites/cms && rvm use 1.9.3-p0'
-alias cde='cd ~/Sites/edge && rvm use 1.9.3-p0'
-alias cds='cd ~/Sites/sellery && rvm use 1.9.3-p0-perf'
-alias cdt='cd ~/Sites/trans && rvm use 1.9.3-p0'
-alias cdv='cd ~/Sites/ivory && rvm use system'
+alias cdb='cd ~/Sites/bitmapi'
+alias cdc='cd ~/Sites/cms && rbfu-env @1.9'
+alias cde='cd ~/Sites/edge'
+alias cds='cd ~/Sites/sellery'
+alias cdt='cd ~/Sites/trans'
+alias cdv='cd ~/Sites/ivory'
+alias forpow='foreman start -f=ProcfileForPow'
 
 alias sub='subl'
 alias tarit="tar xvfz"
