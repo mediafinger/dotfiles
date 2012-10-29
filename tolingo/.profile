@@ -87,7 +87,7 @@ LSCOLORS=ExgxfxgfBxegedbeacbhag
 
 source $HOME/.ssh/auth_keys
 
-# make Rails faster, but increase its memory footprint:
+# make Ruby faster, but increase its memory footprint:
 export RUBY_HEAP_MIN_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
@@ -108,8 +108,7 @@ alias s="be ./script/server"
 alias s1="be rails server --port=3001"
 alias c1="be rails console"
 alias r="be rake"
-alias testb="r spec"
-alias testv="r tolingo:tests:all"
+
 alias cdb='cd ~/Sites/bitmapi'
 alias cdc='cd ~/Sites/cms && rbfu-env @1.9'
 alias cde='cd ~/Sites/edge'

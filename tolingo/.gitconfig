@@ -1,6 +1,6 @@
 [user]
-	name = Andreas Finger
-	email = webmaster@mediafinger.com
+	name = "Andreas Finger"
+	email = "webmaster@mediafinger.com"
 [github]
   user = mediafinger
 [alias]
@@ -39,14 +39,7 @@
   summary = true
   tool = opendiff
 [core]
+  excludesfile = /Users/andreasfinger/.gitignore_global
   # whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [gc]
   auto = 1    # automatic garbage collection to keep git fast
-[core]
-	excludesfile = /Users/andreasfinger/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
