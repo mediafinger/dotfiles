@@ -10,7 +10,8 @@
   com = !git add . && git commit -am
   sync = !git pull --rebase && git push
   d = diff --staged
-  unstage = reset HEAD
+  unstage = !git reset HEAD && git checkout .
+  untrack = clean -df
   resetcommit = reset --soft HEAD^
 [color]
   ui = auto
@@ -31,12 +32,14 @@
   default = current
 [branch]
   autosetupmerge = true
+  # autosetuprebase = true
 [branch "master"]
   rebase = true
 [merge]
   summary = true
   tool = opendiff
 [core]
+  # excludesfile = $HOME/.gitignore_global
   # whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [gc]
   auto = 1    # automatic garbage collection to keep git fast
