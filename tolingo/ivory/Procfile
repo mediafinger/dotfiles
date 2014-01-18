@@ -1,3 +1,0 @@
-web:             bundle exec ./script/server
-order_processor: bundle exec ruby ./script/processor.rb OrderProcessor run
-step_processor:  bundle exec ruby ./script/processor.rb StepProcessor run
